@@ -1,24 +1,24 @@
 import random
 words = [
-		"python","rocky"
-		"programa","terminator"
-		"variable","cars"
-		"funcion","avatar"
-		"bucle","zlatan"
-		"cadena","franco"
-		"entero","diego"
-		"lista","cristiano"
+		"python",
+		"programa",
+		"variable",
+		"funcion",
+		"bucle",
+		"cadena",
+		"entero",
+		"lista",
 ]
-categorias = {"programacion":["entero","lista","variable","cadena","entero","python","programa","bucle"],
-				"peliculas" :[ "rocky","cars","avatar","terminator"],
-				"nombres":["zlatan","diego","cristiano","franco"]
+categorias = {"tecno_muy_general":["programa","python"],
+				"datos" :["lista","entero","cadena","variable"], # dividí las palabras dadas en categorías porque en teoría dijieron eso
+				"logica":["funcion","bucle"]
 				}
 				
 print("¡Bienvenido al Ahorcado!")
-print ("Las opciones que tienes para elegir son: nombres,programacion,peliculas")
+print ("Las opciones que tienes para elegir son: tecno_muy_general,datos,logica") #Corregí las categorías
 word = random.choice(words)
 categoria =input("Elige una categoría de palabra: ")#Lo agregue para que el usuario elija cat antes de empezar
-word = random.choice(categorias[categoria])
+word = random.choice(categorias[categoria]) #Aca puse para que elija una palabra de la categoria elegida
 guessed = []
 puntaje=0
 attempts = 6
