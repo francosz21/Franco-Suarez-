@@ -1,19 +1,28 @@
 import random
 words = [
-		"python",
-		"programa",
-		"variable",
-		"funcion",
-		"bucle",
-		"cadena",
-		"entero",
-		"lista",
+		"python","rocky"
+		"programa","terminator"
+		"variable","cars"
+		"funcion","avatar"
+		"bucle","zlatan"
+		"cadena","franco"
+		"entero","diego"
+		"lista","cristiano"
 ]
+categorias = {"programacion":["entero","lista","variable","cadena","entero","python","programa","bucle"],
+				"peliculas" :[ "rocky","cars","avatar","terminator"],
+				"nombres":["zlatan","diego","cristiano","franco"]
+				}
+				
+print("¡Bienvenido al Ahorcado!")
+print ("Las opciones que tienes para elegir son: nombres,programacion,peliculas")
 word = random.choice(words)
+categoria =input("Elige una categoría de palabra: ")#Lo agregue para que el usuario elija cat antes de empezar
+word = random.choice(categorias[categoria])
 guessed = []
 puntaje=0
 attempts = 6
-print("¡Bienvenido al Ahorcado!")
+
 print()
 while attempts > 0:
 # Mostrar progreso: letras adivinadas y guiones para las que faltan
@@ -41,7 +50,8 @@ while attempts > 0:
 		print("¡Bien! Esa letra está en la palabra.")
 		print("puntaje=",puntaje)
 	elif len(letter)>1 or not letter.isalpha(): #condicion por si se ingresa algo que no sea 1 sola letra
-		print ("No puedes poner numeros o caracteres que no sean letras (solo 1 letra a la vez)")
+		print ("Entrada no válida")
+		print (" No puedes poner numeros o caracteres que no sean letras (solo 1 letra a la vez)")
 		print("puntaje=",puntaje)
 	else:
 		guessed.append(letter)
